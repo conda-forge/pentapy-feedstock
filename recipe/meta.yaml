@@ -1,5 +1,5 @@
 {% set name = "pentapy" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 637ab759966ce3454063d3ff6f065ace8e5ade2ae1acf06861e1666e57bca8f0
+  sha256: 236ebb01ea898013389dd501a2a32bdd2f9ab34e67ed79ca94f4987951b70d30
 
 build:
   number: 0
   script:
-    - {{ PYTHON }} -m pip install . --no-deps -vv
+    - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   build:
@@ -21,9 +21,9 @@ requirements:
     - pip
     - python
     - setuptools >=45
-    - setuptools_scm >=3.4
-    - cython >=0.28.3
-    - numpy >=1.14.5
+    - setuptools_scm >=3.5
+    - cython >=0.28.3, <3.0
+    - numpy >=1.14.5, <2.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
