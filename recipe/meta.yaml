@@ -1,5 +1,5 @@
 {% set name = "pentapy" %}
-{% set version = "1.1.2" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 236ebb01ea898013389dd501a2a32bdd2f9ab34e67ed79ca94f4987951b70d30
+  sha256: e48e0a63030ed3d92072dfdf434859e7eeae71a4f2f728e59f31f5e879848982
 
 build:
-  number: 3
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
