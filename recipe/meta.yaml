@@ -20,10 +20,10 @@ requirements:
   host:
     - pip
     - python
-    - setuptools >=45
-    - setuptools_scm >=3.5
-    - cython >=0.28.3, <3.0
-    - numpy >=1.14.5, <2.0
+    - setuptools >=64
+    - setuptools_scm >=7
+    - cython >=3.0.10, <3.1
+    - numpy >=1.20.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
